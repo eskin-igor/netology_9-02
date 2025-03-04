@@ -1,5 +1,5 @@
 ## netology_9-02
-### Домашнее задание к занятию «Система мониторинга Zabbix. Часть 1.»
+### Решение на домашнее задание к занятию «Система мониторинга Zabbix. Часть 1.»
 
 ## Задание 1
 
@@ -20,8 +20,7 @@
 1. Установите PostgreSQL.
 apt install postgresql
 2. Пользуясь конфигуратором команд с официального сайта, составьте набор команд для установки последней версии Zabbix с поддержкой PostgreSQL и Apache.
-
-![](https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-00.PNG)
+![](https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-00.PNG)  
 а. Установить репозиторий Zabbix:    
    wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_latest_6.0+debian12_all.deb  
    dpkg -i zabbix-release_latest_6.0+debian12_all.deb  
@@ -36,7 +35,7 @@ apt install postgresql
    На сервере Zabbix импортируйте начальную схему и данные. Вам будет предложено ввести ваш новый пароль.  
    zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix  
 г. Настройте базу данных для Zabbix сервера:  
-  Отредактируйте файл /etc/zabbix/zabbix_server.conf  
+   Отредактируйте файл /etc/zabbix/zabbix_server.conf  
    DBPassword=password  
 д. Запустите процессы Zabbix сервера и агента:  
    Запустите процессы сервера и агента Zabbix и сделайте так, чтобы они запускались при загрузке системы.  
@@ -44,7 +43,6 @@ apt install postgresql
    systemctl enable zabbix-server zabbix-agent apache2  
 е. Откройте веб-страницу Zabbix UI:  
    URL-адрес по умолчанию для Zabbix UI при использовании веб-сервера Apache — http://host/zabbix  
-
 3. Выполните все необходимые команды для установки Zabbix Server и Zabbix Web Server.
 
 ![](https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-01.PNG)
