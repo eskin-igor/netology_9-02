@@ -22,27 +22,27 @@ apt install postgresql
 2. Пользуясь конфигуратором команд с официального сайта, составьте набор команд для установки последней версии Zabbix с поддержкой PostgreSQL и Apache.
 ![](https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-00.PNG)  
 а. Установить репозиторий Zabbix:    
-   wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_latest_6.0+debian12_all.deb  
-   dpkg -i zabbix-release_latest_6.0+debian12_all.deb  
-   apt update  
+	   wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_latest_6.0+debian12_all.deb  
+	   dpkg -i zabbix-release_latest_6.0+debian12_all.deb  
+	   apt update  
 б. Установка Zabbix сервера, интерфейса, агента:  
-   apt install zabbix-server-pgsql zabbix-frontend-php php8.2-pgsql zabbix-apache-conf zabbix-sql-scripts zabbix-agent  
+	   apt install zabbix-server-pgsql zabbix-frontend-php php8.2-pgsql zabbix-apache-conf zabbix-sql-scripts zabbix-agent  
 в. Создать начальную базу данных;  
-   Убедитесь, что сервер базы данных запущен и работает.  
-   Запустите следующую команду на хосте вашей базы данных.  
-   sudo -u postgres createuser --pwprompt zabbix  
-   sudo -u postgres createdb -O zabbix zabbix  
-   На сервере Zabbix импортируйте начальную схему и данные. Вам будет предложено ввести ваш новый пароль.  
-   zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix  
+	   Убедитесь, что сервер базы данных запущен и работает.  
+	   Запустите следующую команду на хосте вашей базы данных.  
+	   sudo -u postgres createuser --pwprompt zabbix  
+	   sudo -u postgres createdb -O zabbix zabbix  
+	   На сервере Zabbix импортируйте начальную схему и данные. Вам будет предложено ввести ваш новый пароль.  
+	   zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix  
 г. Настройте базу данных для Zabbix сервера:  
-   Отредактируйте файл /etc/zabbix/zabbix_server.conf  
-   DBPassword=password  
+	   Отредактируйте файл /etc/zabbix/zabbix_server.conf  
+	   DBPassword=password  
 д. Запустите процессы Zabbix сервера и агента:  
-   Запустите процессы сервера и агента Zabbix и сделайте так, чтобы они запускались при загрузке системы.  
-   systemctl restart zabbix-server zabbix-agent apache2  
-   systemctl enable zabbix-server zabbix-agent apache2  
+	   Запустите процессы сервера и агента Zabbix и сделайте так, чтобы они запускались при загрузке системы.  
+	   systemctl restart zabbix-server zabbix-agent apache2  
+	   systemctl enable zabbix-server zabbix-agent apache2  
 е. Откройте веб-страницу Zabbix UI:  
-   URL-адрес по умолчанию для Zabbix UI при использовании веб-сервера Apache — http://host/zabbix  
+	   URL-адрес по умолчанию для Zabbix UI при использовании веб-сервера Apache — http://host/zabbix  
 3. Выполните все необходимые команды для установки Zabbix Server и Zabbix Web Server.
 
 ![](https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-01.PNG)
@@ -73,16 +73,16 @@ apt install postgresql
 
 ## Решение 2
 
-1. Установите Zabbix Agent на 2 вирт.машины, одной из них может быть ваш Zabbix Server.
+1. Установите Zabbix Agent на 2 вирт.машины, одной из них может быть ваш Zabbix Server.  
 а. Установить репозиторий Zabbix:  
-   wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_latest_6.0+debian12_all.deb  
-   dpkg -i zabbix-release_latest_6.0+debian12_all.deb  
-   apt update  
+	   wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_latest_6.0+debian12_all.deb  
+	   dpkg -i zabbix-release_latest_6.0+debian12_all.deb  
+	   apt update  
 б. Установить Zabbix агент:  
-   apt install zabbix-agent  
+	   apt install zabbix-agent  
 в. Запустить процесс Zabbix агента:  
-   systemctl restart zabbix-agent  
-   systemctl enable zabbix-agent  
+	   systemctl restart zabbix-agent  
+	   systemctl enable zabbix-agent  
 2. Добавьте Zabbix Server в список разрешенных серверов ваших Zabbix Agentов.
 
 ![](https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-02-02.PNG)
