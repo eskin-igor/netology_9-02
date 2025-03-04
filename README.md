@@ -11,8 +11,8 @@
 3. Пользуясь конфигуратором команд с официального сайта, составьте набор команд для установки последней версии Zabbix с поддержкой PostgreSQL и Apache.
 4. Выполните все необходимые команды для установки Zabbix Server и Zabbix Web Server.
 
-Требования к результаты
-Прикрепите в файл README.md скриншот авторизации в админке.
+Требования к результатам  
+Прикрепите в файл README.md скриншот авторизации в админке.  
 Приложите в файл README.md текст использованных команд в GitHub.
 
 ## Решение 1
@@ -21,9 +21,9 @@
 apt install postgresql
 2. Пользуясь конфигуратором команд с официального сайта, составьте набор команд для установки последней версии Zabbix с поддержкой PostgreSQL и Apache.
 
-![] (https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-00.PNG)
-    а. Установить репозиторий Zabbix:
-        wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_latest_6.0+debian12_all.deb
+![](https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-00.PNG)
+    *а. Установить репозиторий Zabbix:    
+        wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_latest_6.0+debian12_all.deb  
         dpkg -i zabbix-release_latest_6.0+debian12_all.deb
         apt update
     б. Установка Zabbix сервера, интерфейса, агента:
@@ -47,14 +47,14 @@ apt install postgresql
 
 3. Выполните все необходимые команды для установки Zabbix Server и Zabbix Web Server.
 
-![] (https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-01.PNG)
-![] (https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-02.PNG)
-![] (https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-03.PNG)
-![] (https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-04.PNG)
-![] (https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-05.PNG)
-![] (https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-06.PNG)
-![] (https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-08.PNG)
-![] (https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-07.PNG)
+![](https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-01.PNG)
+![](https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-02.PNG)
+![](https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-03.PNG)
+![](https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-04.PNG)
+![](https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-05.PNG)
+![](https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-06.PNG)
+![](https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-08.PNG)
+![](https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-01-07.PNG)
 
 ## Задание 2
 
@@ -67,11 +67,11 @@ apt install postgresql
 4. Добавьте Zabbix Agentов в раздел Configuration > Hosts вашего Zabbix Servera.
 5. Проверьте, что в разделе Latest Data начали появляться данные с добавленных агентов.
 
-Требования к результаты
-Приложите в файл README.md скриншот раздела Configuration > Hosts, где видно, что агенты подключены к серверу
-Приложите в файл README.md скриншот лога zabbix agent, где видно, что он работает с сервером
-Приложите в файл README.md скриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
-Приложите в файл README.md текст использованных команд в GitHub
+Требования к результам  
+Приложите в файл README.md скриншот раздела Configuration > Hosts, где видно, что агенты подключены к серверу.  
+Приложите в файл README.md скриншот лога zabbix agent, где видно, что он работает с сервером.  
+Приложите в файл README.md скриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.  
+Приложите в файл README.md текст использованных команд в GitHub.  
 
 ## Решение 2
 
@@ -87,20 +87,20 @@ apt install postgresql
          systemctl enable zabbix-agent
 2. Добавьте Zabbix Server в список разрешенных серверов ваших Zabbix Agentов.
 
-![] (https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-02-02.PNG)
+![](https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-02-02.PNG)
 
 3. Добавьте Zabbix Agentов в раздел Configuration > Hosts вашего Zabbix Servera.
 
-![] (https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-02-03.PNG)
+![](https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-02-03.PNG)
 
 4. Проверьте, что в разделе Latest Data начали появляться данные с добавленных агентов.
 
-![] (https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-02-04.PNG)
+![](https://github.com/eskin-igor/netology_9-02/blob/main/screenshots_9-02/9-02-02-04.PNG)
 
 ## Задание 3 со звёздочкой*
 Установите Zabbix Agent на Windows (компьютер) и подключите его к серверу Zabbix.
 
-Требования к результаты
+Требования к результам  
 Приложите в файл README.md скриншот раздела Latest Data, где видно свободное место на диске C:
 
 ## Критерии оценки
